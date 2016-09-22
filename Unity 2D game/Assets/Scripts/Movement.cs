@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour {
     public Rigidbody2D ridgidBody;
 
     Vector2 moveForwards = new Vector2(100, 0);
-
+    Vector2 moveBackwards = new Vector2(-100, 0);
 	// Use this for initialization
 	void Start () {
         ridgidBody = GetComponent<Rigidbody2D>();
@@ -18,5 +18,10 @@ public class Movement : MonoBehaviour {
         {
             ridgidBody.AddForce(moveForwards);
         }
+        /*if (Input.GetButtonUp("vertical"))
+        {
+            ridgidBody.AddForce(moveBackwards);
+        }
+        */
 	}
 }
