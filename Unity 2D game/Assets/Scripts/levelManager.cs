@@ -19,7 +19,7 @@ public class levelManager : MonoBehaviour {
             if( control == false)
             {
                 control = true;
-                Debug.Log(control);
+                Application.LoadLevel("level_1");
                
             }
         }
