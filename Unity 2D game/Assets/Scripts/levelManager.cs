@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class levelManager : MonoBehaviour {
     bool control = false;
+   static int levelSwitched = 0;
+   
 	// Use this for initialization
 	void Start () {
       
@@ -12,6 +14,7 @@ public class levelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+       
         if (GameObject.Find("flagPole").GetComponent<EndGame>().levelComplete)
         {
             
@@ -19,12 +22,23 @@ public class levelManager : MonoBehaviour {
             if( control == false)
             {
                 control = true;
+                levelSwitched++;
                 Debug.Log(control);
-              Application.LoadLevel("level_1");
+                if (levelSwitched == 1)
+                {
+                    Application.LoadLevel(1);
+                }
+              if (levelSwitched == 2)
+                {
+                    Application.LoadLevel(2);
+                }
+                
                 
             }
         }
        
 
     }
-}
+    
+    }
+
