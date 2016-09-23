@@ -18,10 +18,10 @@ public class Movement : MonoBehaviour {
         {
             ridgidBody.AddForce(moveForwards);
         }
-        /*if (Input.GetButtonUp("vertical"))
+        if (Input.GetButtonUp("Vertical"))
         {
             ridgidBody.AddForce(moveBackwards);
         }
-        */
+        
 	}
 }
