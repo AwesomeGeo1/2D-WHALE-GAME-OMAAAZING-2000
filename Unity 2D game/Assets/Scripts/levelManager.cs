@@ -1,20 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class levelManager : MonoBehaviour {
     bool control = false;
    static int levelSwitched = 0;
-   
-	// Use this for initialization
-	void Start () {
-      
-     
-	}
+    public static int score;
+    public Text scoreText;
+
+    // Use this for initialization
+    void Start () {
+        score = 0;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-       
+        scoreText.text = "Score:  " + score;
+
+
+
         if (GameObject.Find("flagPole").GetComponent<EndGame>().levelComplete)
         {
             
