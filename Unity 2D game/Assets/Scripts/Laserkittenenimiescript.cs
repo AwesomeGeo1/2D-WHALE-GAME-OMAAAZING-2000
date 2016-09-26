@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Laserkittenenimiescript : MonoBehaviour {
-    public float movementSpeed = 10;
+
+    private float delta = 10f;  // Amount to move left and right from the start point
+    private float speed = 2.0f; // Speed at which the character moves
+    private Vector3 startPos;
     // Use this for initialization
     void Start () {
-		
-	}
+        startPos = transform.position;
+    }
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -22,13 +25,8 @@ public class Laserkittenenimiescript : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
-        move();
-    
-    }
-    void move()
-    {
-        transform.Translate(Vector3.left * Time.deltaTime);
-
-        transform.Translate(Vector3.right * Time.deltaTime);
+        Vector3 v = startPos;
+        v.x += delta * Mathf.Sin(Time.time * speed);
+        transform.position = v;
     }
 }
