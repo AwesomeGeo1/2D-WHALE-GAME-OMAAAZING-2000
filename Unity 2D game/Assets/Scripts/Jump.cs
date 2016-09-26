@@ -6,21 +6,30 @@ public class Jump : MonoBehaviour
 
     public Rigidbody2D rb;
     Vector2 jumpman = new Vector2(0, 500);
+    public bool jumpenabled;
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
+        jumpenabled = true;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonUp("Jump"))
+        if (jumpenabled == true)
         {
-            rb.AddForce(jumpman);
+            if (Input.GetButtonUp("Jump"))
+            {
+                rb.AddForce(jumpman);
+                jumpenabled = false;
+            }
+
+
         }
+
     }
 }
