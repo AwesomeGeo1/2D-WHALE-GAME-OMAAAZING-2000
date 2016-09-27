@@ -16,8 +16,11 @@ public class Banana : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        levelManager.score++;
+        if (other.gameObject.tag == "Player")
+        {
+            levelManager.score++;
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

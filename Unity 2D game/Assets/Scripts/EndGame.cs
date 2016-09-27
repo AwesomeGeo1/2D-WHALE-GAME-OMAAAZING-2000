@@ -20,12 +20,14 @@ public class EndGame : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
         {
-        if (levelComplete == false)
+        if (other.gameObject.tag == "Player")
         {
-            levelComplete = true;
-            
+            if (levelComplete == false)
+            {
+                levelComplete = true;
+
+            }
         }
-        
        
         }
         }
