@@ -5,7 +5,7 @@ public class Jump : MonoBehaviour
 {
 
     public Rigidbody2D rb;
-    Vector2 jumpman = new Vector2(0, 500);
+    public static Vector2 jumpman = new Vector2(0, 500);
     public bool jumpenabled;
 
     // Use this for initialization

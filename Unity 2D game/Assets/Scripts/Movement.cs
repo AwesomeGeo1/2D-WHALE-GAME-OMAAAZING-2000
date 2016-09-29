@@ -5,9 +5,11 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
     public Rigidbody2D rb;
     //move forwards and move backwards as vectors with 2 perameters.
-    private float horizontalSpeed = 3F;
+    public static float horizontalSpeed;
     // Use this for initialization
     void Start () {
+
+        horizontalSpeed = 3;
         //gets rigidBody
         rb = GetComponent<Rigidbody2D>();
 	}
